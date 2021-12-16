@@ -40,8 +40,8 @@ export default class PeopleController {
     updatePerson = async  (req, res) => {
         const body = this.getDataFromBody(req.body);
         const id = req.params.id;
-        const updateItem = await this.peopleRepository.updatePerson(id, body);
-        const getItem = await this.peopleRepository.getPerson(updateItem._id);
+        await this.peopleRepository.updatePerson(id, body);
+        const getItem = await this.peopleRepository.getPerson(id);
         res.status(200).json(getItem);
     }
 

@@ -23,9 +23,7 @@ export default class PeopleRepository {
     }
 
     async updatePerson(id, body) {
-        const updatedItem = await this.repositoryData.findOneAndUpdate({_id: new ObjectId(id)}, {$set: body});
-
-        return updatedItem.value;
+        return await this.repositoryData.updateOne({_id: new ObjectId(id)}, {$set: body})
     }
 
     async deletePerson(id) {

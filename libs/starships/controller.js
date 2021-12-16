@@ -29,14 +29,15 @@ export default class StarshipsController {
         const body = this.getDataFromBody(req.body);
         const createItem = await this.starshipsRepository.createStarship(body)
         const getItem = await this.starshipsRepository.getStarship(createItem.insertedId)
+
         await res.status(201).json(getItem);
     }
 
     updateStarship = async (req, res) => {
         const body = this.getDataFromBody(req.body);
         const id = req.params.id;
-        const updateItem = await this.starshipsRepository.updateStarship(id, body);
-        const getItem = await this.starshipsRepository.getStarship(updateItem._id);
+        await this.starshipsRepository.updateStarship(id, body);
+        const getItem = await this.starshipsRepository.getStarship(id);
         res.status(200).json(getItem);
     }
 

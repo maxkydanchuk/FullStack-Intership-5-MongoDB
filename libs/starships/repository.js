@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongodb'
+import {ObjectId} from 'mongodb'
 
 export default class StarshipsRepository {
     constructor(repositoryData) {
@@ -23,9 +23,7 @@ export default class StarshipsRepository {
     }
 
    async updateStarship (id, body) {
-       const updatedItem = await this.repositoryData.findOneAndUpdate({_id: new ObjectId(id)}, {$set: body});
-
-       return updatedItem.value;
+       return await this.repositoryData.updateOne({_id: new ObjectId(id)}, {$set: body})
     }
 
     async deleteStarship (id)  {
