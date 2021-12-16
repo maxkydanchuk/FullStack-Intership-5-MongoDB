@@ -1,41 +1,35 @@
+import {ObjectId} from "mongodb";
+
 export default class PeopleRepository {
     constructor(repositoryData) {
         this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-   async getAllPeople () {
-       return await this.repositoryData.find().toArray();
+    async getAllPeople() {
+        return await this.repositoryData.find().toArray();
     }
 
-    getPerson (id) {
-        return this.repositoryData.find(person => person.pk === id);
+    async getPerson(id) {
+        return await this.repositoryData.findOne({_id: new ObjectId(id)})
     }
 
-    createPerson (body) {
-        const newPerson =  {
+    async createPerson(body) {
+        const newPerson = {
             ...body,
             model: "resources.starship",
-            pk:  Number(new Date())
         };
 
-        this.repositoryData.push(newPerson)
-        console.log(this.repositoryData)
+        return await this.repositoryData.insertOne(newPerson)
     }
 
-    updatePerson (id, body) {
-        let person = this.repositoryData.find(person => person.pk === id);
-        person = {
-            ...person,
-           ...body,
-        };
-       const index = this.repositoryData.findIndex(el => el.pk === id);
-       this.repositoryData =  [...this.repositoryData.slice(0, index), person, ...this.repositoryData.slice(index +1)];
+    async updatePerson(id, body) {
+        const updatedItem = await this.repositoryData.findOneAndUpdate({_id: new ObjectId(id)}, {$set: body});
 
-       return this.repositoryData;
+        return updatedItem.value;
     }
 
-    deletePerson (id) {
-        this.repositoryData = this.repositoryData.filter(person => person.pk !== id);
-        return this.repositoryData;
+    async deletePerson(id) {
+        await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
+        return await this.repositoryData.find().toArray()
     }
 }

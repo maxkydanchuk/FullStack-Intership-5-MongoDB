@@ -25,27 +25,29 @@ export default class PeopleController {
     }
 
     getPerson = async  (req, res) => {
-        const id = Number(req.params.id);
+        const id = req.params.id
         const result = await this.peopleRepository.getPerson(id);
         res.status(200).json(result);
     }
 
     createPerson = async  (req, res) => {
         const body = this.getDataFromBody(req.body);
-        this.peopleRepository.createPerson(body)
-        await res.status(201).send(this.peopleRepository);
+        const createItem = await this.peopleRepository.createPerson(body)
+        const getItem = await this.peopleRepository.getPerson(createItem.insertedId)
+        await res.status(201).json(getItem);
     }
 
     updatePerson = async  (req, res) => {
         const body = this.getDataFromBody(req.body);
-        const id = Number(req.params.id);
-        this.peopleRepository = await this.peopleRepository.updatePerson(id, body);
-        res.status(200).json(this.peopleRepository);
+        const id = req.params.id;
+        const updateItem = await this.peopleRepository.updatePerson(id, body);
+        const getItem = await this.peopleRepository.getPerson(updateItem._id);
+        res.status(200).json(getItem);
     }
 
    deletePerson = async  (req, res) => {
-        const id = Number(req.params.id);
-        this.peopleRepository = await this.peopleRepository.deletePerson(id);
-        return res.status(200).json(this.peopleRepository);
+       const id = req.params.id;
+       const responseData = await this.peopleRepository.deleteStarship(id);
+       return res.status(200).json(responseData);
     }
 }

@@ -11,8 +11,7 @@
       "homeworld": 1,
       "birth_year": "19BBY"
     },
-    "model": "resources.people",
-    "pk": 1
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -26,8 +25,8 @@
       "homeworld": 1,
       "birth_year": "112BBY"
     },
-    "model": "resources.people",
-    "pk": 2
+    "model": "resources.people"
+
   },
   {
     "fields": {
@@ -41,8 +40,7 @@
       "homeworld": 8,
       "birth_year": "33BBY"
     },
-    "model": "resources.people",
-    "pk": 3
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -56,8 +54,7 @@
       "homeworld": 1,
       "birth_year": "41.9BBY"
     },
-    "model": "resources.people",
-    "pk": 4
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -71,8 +68,7 @@
       "homeworld": 2,
       "birth_year": "19BBY"
     },
-    "model": "resources.people",
-    "pk": 5
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -86,8 +82,7 @@
       "homeworld": 1,
       "birth_year": "52BBY"
     },
-    "model": "resources.people",
-    "pk": 6
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -101,8 +96,7 @@
       "homeworld": 1,
       "birth_year": "47BBY"
     },
-    "model": "resources.people",
-    "pk": 7
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -116,8 +110,7 @@
       "homeworld": 1,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 8
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -131,8 +124,7 @@
       "homeworld": 1,
       "birth_year": "24BBY"
     },
-    "model": "resources.people",
-    "pk": 9
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -146,8 +138,7 @@
       "homeworld": 20,
       "birth_year": "57BBY"
     },
-    "model": "resources.people",
-    "pk": 10
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -161,8 +152,7 @@
       "homeworld": 1,
       "birth_year": "41.9BBY"
     },
-    "model": "resources.people",
-    "pk": 11
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -176,8 +166,7 @@
       "homeworld": 21,
       "birth_year": "64BBY"
     },
-    "model": "resources.people",
-    "pk": 12
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -191,8 +180,7 @@
       "homeworld": 14,
       "birth_year": "200BBY"
     },
-    "model": "resources.people",
-    "pk": 13
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -206,8 +194,7 @@
       "homeworld": 22,
       "birth_year": "29BBY"
     },
-    "model": "resources.people",
-    "pk": 14
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -221,8 +208,7 @@
       "homeworld": 23,
       "birth_year": "44BBY"
     },
-    "model": "resources.people",
-    "pk": 15
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -236,8 +222,7 @@
       "homeworld": 24,
       "birth_year": "600BBY"
     },
-    "model": "resources.people",
-    "pk": 16
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -251,8 +236,7 @@
       "homeworld": 22,
       "birth_year": "21BBY"
     },
-    "model": "resources.people",
-    "pk": 18
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -266,8 +250,7 @@
       "homeworld": 26,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 19
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -281,8 +264,7 @@
       "homeworld": 28,
       "birth_year": "896BBY"
     },
-    "model": "resources.people",
-    "pk": 20
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -296,8 +278,7 @@
       "homeworld": 8,
       "birth_year": "82BBY"
     },
-    "model": "resources.people",
-    "pk": 21
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -311,8 +292,7 @@
       "homeworld": 10,
       "birth_year": "31.5BBY"
     },
-    "model": "resources.people",
-    "pk": 22
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -326,8 +306,7 @@
       "homeworld": 28,
       "birth_year": "15BBY"
     },
-    "model": "resources.people",
-    "pk": 23
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -341,8 +320,7 @@
       "homeworld": 29,
       "birth_year": "53BBY"
     },
-    "model": "resources.people",
-    "pk": 24
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -356,8 +334,7 @@
       "homeworld": 30,
       "birth_year": "31BBY"
     },
-    "model": "resources.people",
-    "pk": 25
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -371,8 +348,7 @@
       "homeworld": 6,
       "birth_year": "37BBY"
     },
-    "model": "resources.people",
-    "pk": 26
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -386,8 +362,7 @@
       "homeworld": 31,
       "birth_year": "41BBY"
     },
-    "model": "resources.people",
-    "pk": 27
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -401,8 +376,7 @@
       "homeworld": 32,
       "birth_year": "48BBY"
     },
-    "model": "resources.people",
-    "pk": 28
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -416,8 +390,7 @@
       "homeworld": 28,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 29
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -431,8 +404,7 @@
       "homeworld": 7,
       "birth_year": "8BBY"
     },
-    "model": "resources.people",
-    "pk": 30
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -446,8 +418,7 @@
       "homeworld": 33,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 31
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -461,8 +432,7 @@
       "homeworld": 28,
       "birth_year": "92BBY"
     },
-    "model": "resources.people",
-    "pk": 32
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -476,8 +446,7 @@
       "homeworld": 18,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 33
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -491,8 +460,7 @@
       "homeworld": 9,
       "birth_year": "91BBY"
     },
-    "model": "resources.people",
-    "pk": 34
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -506,8 +474,7 @@
       "homeworld": 8,
       "birth_year": "46BBY"
     },
-    "model": "resources.people",
-    "pk": 35
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -521,8 +488,7 @@
       "homeworld": 8,
       "birth_year": "52BBY"
     },
-    "model": "resources.people",
-    "pk": 36
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -536,8 +502,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 37
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -551,8 +516,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 38
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -566,8 +530,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 39
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -581,8 +544,7 @@
       "homeworld": 34,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 40
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -596,8 +558,7 @@
       "homeworld": 35,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 41
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -611,8 +572,7 @@
       "homeworld": 8,
       "birth_year": "62BBY"
     },
-    "model": "resources.people",
-    "pk": 42
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -626,8 +586,7 @@
       "homeworld": 1,
       "birth_year": "72BBY"
     },
-    "model": "resources.people",
-    "pk": 43
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -641,8 +600,7 @@
       "homeworld": 36,
       "birth_year": "54BBY"
     },
-    "model": "resources.people",
-    "pk": 44
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -656,8 +614,7 @@
       "homeworld": 37,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 45
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -671,8 +628,7 @@
       "homeworld": 37,
       "birth_year": "48BBY"
     },
-    "model": "resources.people",
-    "pk": 46
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -686,8 +642,7 @@
       "homeworld": 38,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 47
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -701,8 +656,7 @@
       "homeworld": 39,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 48
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -716,8 +670,7 @@
       "homeworld": 40,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 49
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -731,8 +684,7 @@
       "homeworld": 41,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 50
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -746,8 +698,7 @@
       "homeworld": 42,
       "birth_year": "72BBY"
     },
-    "model": "resources.people",
-    "pk": 51
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -761,8 +712,7 @@
       "homeworld": 43,
       "birth_year": "92BBY"
     },
-    "model": "resources.people",
-    "pk": 52
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -776,8 +726,7 @@
       "homeworld": 44,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 53
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -791,8 +740,7 @@
       "homeworld": 45,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 54
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -806,8 +754,7 @@
       "homeworld": 9,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 55
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -821,8 +768,7 @@
       "homeworld": 47,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 56
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -836,8 +782,7 @@
       "homeworld": 48,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 57
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -851,8 +796,7 @@
       "homeworld": 49,
       "birth_year": "22BBY"
     },
-    "model": "resources.people",
-    "pk": 58
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -866,8 +810,7 @@
       "homeworld": 50,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 59
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -881,8 +824,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 60
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -896,8 +838,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 61
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -911,8 +852,7 @@
       "homeworld": 1,
       "birth_year": "82BBY"
     },
-    "model": "resources.people",
-    "pk": 62
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -926,8 +866,7 @@
       "homeworld": 11,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 63
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -941,8 +880,7 @@
       "homeworld": 51,
       "birth_year": "58BBY"
     },
-    "model": "resources.people",
-    "pk": 64
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -956,8 +894,7 @@
       "homeworld": 51,
       "birth_year": "40BBY"
     },
-    "model": "resources.people",
-    "pk": 65
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -971,8 +908,7 @@
       "homeworld": 8,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 66
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -986,8 +922,7 @@
       "homeworld": 52,
       "birth_year": "102BBY"
     },
-    "model": "resources.people",
-    "pk": 67
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1001,8 +936,7 @@
       "homeworld": 2,
       "birth_year": "67BBY"
     },
-    "model": "resources.people",
-    "pk": 68
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1016,8 +950,7 @@
       "homeworld": 53,
       "birth_year": "66BBY"
     },
-    "model": "resources.people",
-    "pk": 69
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1031,8 +964,7 @@
       "homeworld": 54,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 70
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1046,8 +978,7 @@
       "homeworld": 55,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 71
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1061,8 +992,7 @@
       "homeworld": 10,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 72
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1076,8 +1006,7 @@
       "homeworld": 10,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 73
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1091,8 +1020,7 @@
       "homeworld": 9,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 74
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1106,8 +1034,7 @@
       "homeworld": 28,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 75
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1121,8 +1048,7 @@
       "homeworld": 56,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 76
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1136,8 +1062,7 @@
       "homeworld": 57,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 77
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1151,8 +1076,7 @@
       "homeworld": 58,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 78
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1166,8 +1090,7 @@
       "homeworld": 59,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 79
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1181,8 +1104,7 @@
       "homeworld": 14,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 80
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1196,8 +1118,7 @@
       "homeworld": 2,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 81
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1211,8 +1132,7 @@
       "homeworld": 60,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 82
+    "model": "resources.people"
   },
   {
     "fields": {
@@ -1226,7 +1146,6 @@
       "homeworld": 12,
       "birth_year": "unknown"
     },
-    "model": "resources.people",
-    "pk": 83
+    "model": "resources.people"
   }
 ]

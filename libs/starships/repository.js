@@ -17,20 +17,19 @@ export default class StarshipsRepository {
     async createStarship (body) {
         const newStarship =  {
             ...body,
-                model: "resources.starship",
-                pk:  Number(new Date())
+                model: "resources.starship"
             };
        return await this.repositoryData.insertOne(newStarship)
     }
 
    async updateStarship (id, body) {
-       const updatedItem = await this.repositoryData.findOneAndUpdate({_id:id}, {$set: body});
-       console.log(updatedItem)
+       const updatedItem = await this.repositoryData.findOneAndUpdate({_id: new ObjectId(id)}, {$set: body});
+
        return updatedItem.value;
     }
 
     async deleteStarship (id)  {
-         await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
+        await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
         return await this.repositoryData.find().toArray()
     }
 }
