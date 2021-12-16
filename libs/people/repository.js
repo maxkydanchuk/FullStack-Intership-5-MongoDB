@@ -27,7 +27,7 @@ export default class PeopleRepository {
     }
 
     async deletePerson(id) {
-        await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
-        return await this.repositoryData.find().toArray()
+        return await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
+
     }
 }
