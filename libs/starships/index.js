@@ -2,12 +2,10 @@ import { createRequire } from "module";
 import StarshipsRepository from './repository.js'
 import StarshipsController from './controller.js'
 import StarshipRouter from './router.js';
+import mongoClient from "../../db.js";
 
-const require = createRequire(import.meta.url);
 
-const starshipsData = require("../../data/starships.json");
-
-const starshipRepository = new StarshipsRepository(starshipsData);
+const starshipRepository = new StarshipsRepository(mongoClient);
 
 const starshipController = new StarshipsController(starshipRepository);
 

@@ -1,10 +1,10 @@
 export default class PeopleRepository {
     constructor(repositoryData) {
-        this.repositoryData = repositoryData;
+        this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-    getAllPeople () {
-        return  this.repositoryData;
+   async getAllPeople () {
+       return await this.repositoryData.find().toArray();
     }
 
     getPerson (id) {

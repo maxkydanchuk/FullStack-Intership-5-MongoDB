@@ -20,27 +20,29 @@ export default class StarshipsController {
     }
 
     getStarship = async (req, res) => {
-        const id = Number(req.params.id);
+        const id = req.params.id
         const result = await this.starshipsRepository.getStarship(id);
         res.status(200).json(result);
     }
 
     createStarship = async (req, res) => {
         const body = this.getDataFromBody(req.body);
-        this.starshipsRepository.createStarship(body)
-        await res.status(201).send(this.starshipsRepository);
+        const createItem = await this.starshipsRepository.createStarship(body)
+        const getItem = await this.starshipsRepository.getStarship(createItem.insertedId)
+        await res.status(201).json(getItem);
     }
 
     updateStarship = async (req, res) => {
         const body = this.getDataFromBody(req.body);
         const id = Number(req.params.id);
-        this.starshipsRepository = await this.starshipsRepository.updateStarship(id, body);
-        res.status(200).json(this.starshipsRepository);
+        const updateItem = await this.starshipsRepository.updateStarship(id, body);
+        const getItem = await this.starshipsRepository.getStarshipById(updateItem._id);
+        res.status(200).json(getItem);
     }
 
-     deleteStarship  (req, res) {
-        const id = Number(req.params.id);
-        const responseData = this.starshipsRepository.deleteStarship(id);
+     async deleteStarship  (req, res) {
+        const id = req.params.id;
+        const responseData = await this.starshipsRepository.deleteStarship(id);
         return res.status(200).json(responseData);
     }
 }

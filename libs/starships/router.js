@@ -6,7 +6,9 @@ function StarshipRouter(controller) {
     router.get('/api/starships', controller.getAllStarships);
     router.get('/api/starships/:id', controller.getStarship);
     router.post('/api/starships/', controller.createStarship);
-    router.put('/api/starships/:id/edit', controller.updateStarship);
+    router.put('/api/starships/:id/edit', (req, res) => {
+        return controller.updateStarship(req, res);
+    });
     router.delete('/api/starships/:id', (req, res) => {
         return controller.deleteStarship(req, res);
     });

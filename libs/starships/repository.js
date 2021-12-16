@@ -1,39 +1,41 @@
+import { ObjectId } from 'mongodb'
+
 export default class StarshipsRepository {
     constructor(repositoryData) {
-        this.repositoryData = repositoryData;
+        this.repositoryData = repositoryData.db('StarWarsDatabase').collection('starships');
     }
 
-     getAllStarships () {
-        return  this.repositoryData;
+     async getAllStarships () {
+        return await this.repositoryData.find().toArray();
     }
 
-    getStarship (id) {
-        return this.repositoryData.find(starship => starship.pk === id);
+    async getStarship (id) {
+        return await this.repositoryData.findOne({_id: new ObjectId(id)})
+
     }
 
-    createStarship (body) {
+    async getStarshipById (id) {
+        return await this.repositoryData.findOne({_id: id})
+
+    }
+
+    async createStarship (body) {
         const newStarship =  {
             ...body,
                 model: "resources.starship",
                 pk:  Number(new Date())
             };
-        this.repositoryData.push(newStarship)
+       return await this.repositoryData.insertOne(newStarship)
     }
 
-    updateStarship (id, body) {
-        let starship = this.repositoryData.find(starship => starship.pk === id);
-        starship = {
-            ...starship,
-            ...body,
-        };
-        const index = this.repositoryData.findIndex( el => el.pk === id);
-        this.repositoryData = [...this.repositoryData.slice(0, index), starship, ...this.repositoryData.slice(index + 1)];
-
-        return this.repositoryData
+   async updateStarship (id, body) {
+       const updatedItem = await this.repositoryData.findOneAndUpdate({_id:id}, {$set: body});
+       console.log(updatedItem)
+       return updatedItem.value;
     }
 
-    deleteStarship (id)  {
-        this.repositoryData = this.repositoryData.filter(starship => starship.pk !== id);
-        return this.repositoryData;
+    async deleteStarship (id)  {
+         await this.repositoryData.findOneAndDelete({_id: new ObjectId(id)});
+        return await this.repositoryData.find().toArray()
     }
 }
