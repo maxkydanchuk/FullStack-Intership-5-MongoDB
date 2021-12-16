@@ -47,7 +47,7 @@ export default class PeopleController {
 
    deletePerson = async  (req, res) => {
        const id = req.params.id;
-       const responseData = await this.peopleRepository.deleteStarship(id);
-       return res.status(200).json(responseData);
+       await this.peopleRepository.deleteStarship(id);
+       return res.status(200).json(id);
     }
 }

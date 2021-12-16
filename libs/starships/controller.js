@@ -43,7 +43,7 @@ export default class StarshipsController {
 
      async deleteStarship  (req, res) {
         const id = req.params.id;
-        const responseData = await this.starshipsRepository.deleteStarship(id);
-        return res.status(200).json(responseData);
+        await this.starshipsRepository.deleteStarship(id);
+        return res.status(200).json(id);
     }
 }
