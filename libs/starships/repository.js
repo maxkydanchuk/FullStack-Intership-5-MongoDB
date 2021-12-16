@@ -14,11 +14,6 @@ export default class StarshipsRepository {
 
     }
 
-    async getStarshipById (id) {
-        return await this.repositoryData.findOne({_id: id})
-
-    }
-
     async createStarship (body) {
         const newStarship =  {
             ...body,
