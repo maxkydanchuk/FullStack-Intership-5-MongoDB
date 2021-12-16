@@ -20,7 +20,16 @@ export default class PeopleController {
     }
 
     getAllPeople = async (req, res) => {
-        const result = await this.peopleRepository.getAllPeople();
+        const sortBy = req.query.sortBy;
+        const sortOrder = req.query.sortOrder;
+
+        let sort;
+
+        if (sortBy !== undefined && sortOrder !== undefined) {
+            sort = {'sort': [sortBy, sortOrder]};
+        }
+
+        const result = await this.peopleRepository.getAllPeople(sort);
         res.status(200).json(result);
     }
 

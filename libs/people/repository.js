@@ -5,8 +5,9 @@ export default class PeopleRepository {
         this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-    async getAllPeople() {
-        return await this.repositoryData.find().toArray();
+    async getAllPeople(sort) {
+
+        return await this.repositoryData.find({} ,sort).toArray();
     }
 
     async getPerson(id) {
