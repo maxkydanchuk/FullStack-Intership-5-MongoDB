@@ -23,8 +23,9 @@ export default class PeopleController {
         const sortBy = req.query.sortBy;
         const sortOrder = req.query.sortOrder;
         const searchQuery = req.query.search;
-
-        const result = await this.peopleRepository.getAllPeople(sortBy, sortOrder, searchQuery);
+        const pageSize = Number(req.query.size);
+        const pageNumber = Number(req.query.page);
+        const result = await this.peopleRepository.getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber);
         res.status(200).json(result);
     }
 

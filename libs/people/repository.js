@@ -6,23 +6,22 @@ export default class PeopleRepository {
         this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-    async getAllPeople(sortBy, sortOrder, searchQuery) {
+    async getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber) {
         let options = {};
-
         if (searchQuery !== undefined) {
-            options = {"fields.name": {$regex: escapeRegExp(searchQuery), $options: "i"}}
+            options = {
+                "fields.name": {$regex: escapeRegExp(searchQuery), $options: "i"}
+            }
         }
 
-        let cursor = await this.repositoryData.find(options);
+        let cursor = await this.repositoryData.find(options)
+            .skip( pageNumber > 0 ? ( ( pageNumber - 1 ) * pageSize ) : 0 )
+            .limit(pageSize);
 
-        if(sortBy !== undefined && sortOrder !== undefined) {
-            cursor = cursor.sort(sortBy, sortOrder)
+        if (sortBy === undefined || sortOrder === undefined) {
+            return await cursor.toArray().then(res => res);
         }
-
-        console.log(cursor);
-
-        return await cursor.toArray().then(res => res);
-
+        return await cursor.sort(sortBy, sortOrder).toArray().then(res => res);
     }
 
     async getPerson(id) {
