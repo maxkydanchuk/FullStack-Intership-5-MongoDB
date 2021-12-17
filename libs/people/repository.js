@@ -5,9 +5,12 @@ export default class PeopleRepository {
         this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-    async getAllPeople(sort) {
-
-        return await this.repositoryData.find({} ,sort).toArray();
+    async getAllPeople(options) {
+        if(options.sort) {
+            return  await this.repositoryData.find({}, options).toArray();
+        } else {
+            return await this.repositoryData.find(options).toArray();
+        }
     }
 
     async getPerson(id) {

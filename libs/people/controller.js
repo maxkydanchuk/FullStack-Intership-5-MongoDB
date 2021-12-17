@@ -13,23 +13,30 @@ export default class PeopleController {
                 height: body.fields.height,
                 eye_color: body.fields.eye_color,
                 mass: body.fields.mass,
-                // "homeworld": 1,
                 birth_year: body.fields.birth_year
             }
         }
     }
 
+    escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     getAllPeople = async (req, res) => {
+        let options = {};
+
         const sortBy = req.query.sortBy;
         const sortOrder = req.query.sortOrder;
-
-        let sort;
+        const searchQuery = req.query.search;
 
         if (sortBy !== undefined && sortOrder !== undefined) {
-            sort = {'sort': [sortBy, sortOrder]};
+            options = {'sort': [sortBy, sortOrder]};
+        }
+        if(searchQuery !== undefined) {
+            options = {"fields.name": {$regex: this.escapeRegExp(searchQuery), $options:"i"}}
         }
 
-        const result = await this.peopleRepository.getAllPeople(sort);
+        const result = await this.peopleRepository.getAllPeople(options);
         res.status(200).json(result);
     }
 
