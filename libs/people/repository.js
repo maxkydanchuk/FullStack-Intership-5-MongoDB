@@ -5,7 +5,20 @@ export default class PeopleRepository {
         this.repositoryData = repositoryData.db('StarWarsDatabase').collection('people');
     }
 
-    async getAllPeople(options) {
+    escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    async getAllPeople(sortBy, sortOrder, searchQuery) {
+        let options = {};
+
+        if (sortBy !== undefined && sortOrder !== undefined) {
+            options = {'sort': [sortBy, sortOrder]};
+        }
+        if(searchQuery !== undefined) {
+            options = {"fields.name": {$regex: this.escapeRegExp(searchQuery), $options:"i"}}
+        }
+
         if(options.sort) {
             return  await this.repositoryData.find({}, options).toArray();
         } else {

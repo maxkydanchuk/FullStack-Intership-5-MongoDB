@@ -18,25 +18,13 @@ export default class PeopleController {
         }
     }
 
-    escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
 
     getAllPeople = async (req, res) => {
-        let options = {};
-
         const sortBy = req.query.sortBy;
         const sortOrder = req.query.sortOrder;
         const searchQuery = req.query.search;
 
-        if (sortBy !== undefined && sortOrder !== undefined) {
-            options = {'sort': [sortBy, sortOrder]};
-        }
-        if(searchQuery !== undefined) {
-            options = {"fields.name": {$regex: this.escapeRegExp(searchQuery), $options:"i"}}
-        }
-
-        const result = await this.peopleRepository.getAllPeople(options);
+        const result = await this.peopleRepository.getAllPeople(sortBy, sortOrder, searchQuery);
         res.status(200).json(result);
     }
 
