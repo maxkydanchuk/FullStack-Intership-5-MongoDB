@@ -1,4 +1,3 @@
-import { createRequire } from "module";
 import StarshipsRepository from './repository.js'
 import StarshipsController from './controller.js'
 import StarshipRouter from './router.js';

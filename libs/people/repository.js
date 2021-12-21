@@ -31,7 +31,7 @@ export default class PeopleRepository {
     async createPerson(body) {
         const newPerson = {
             ...body,
-            model: "resources.starship",
+            model: "resources.people",
         };
 
         return await this.repositoryData.insertOne(newPerson)

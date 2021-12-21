@@ -15,7 +15,14 @@ export default class StarshipsController {
     }
 
     getAllStarships = async (req, res) =>  {
-        const result = await this.starshipsRepository.getAllStarships();
+        const sortBy = req.query.sortBy;
+        const sortOrder = req.query.sortOrder;
+        const searchQuery = req.query.search;
+        const pageSize = Number(req.query.size);
+        const pageNumber = Number(req.query.page);
+
+        console.log(searchQuery)
+        const result = await this.starshipsRepository.getAllStarships(sortBy, sortOrder, searchQuery, pageSize, pageNumber);
         res.status(200).json(result);
     }
 
