@@ -9,7 +9,7 @@ export default class PeopleRepository {
     async getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber) {
 
         const count = await this.repositoryData.find().count().then(res => res);
-        let totalCount = {"totalCount" : count};
+        let totalCount = {count};
 
         let options = {};
         if (searchQuery !== undefined) {
