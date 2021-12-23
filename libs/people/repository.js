@@ -7,6 +7,10 @@ export default class PeopleRepository {
     }
 
     async getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber) {
+
+        const count = await this.repositoryData.find().count().then(res => res);
+        let totalCount = {"totalCount" : count};
+
         let options = {};
         if (searchQuery !== undefined) {
             options = {
@@ -21,8 +25,10 @@ export default class PeopleRepository {
         if (sortBy === undefined || sortOrder === undefined) {
             return await cursor.toArray().then(res => res);
         }
+        const test = await cursor.sort(sortBy, sortOrder).toArray()
+        const result = { test , totalCount};
 
-        return  await cursor.sort(sortBy, sortOrder).toArray().then(res => res);
+        return result;
     }
 
     async getPerson(id) {

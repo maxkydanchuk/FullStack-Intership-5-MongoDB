@@ -27,10 +27,10 @@ export default class PeopleController {
         const pageNumber = Number(req.query.page);
 
         const result = await this.peopleRepository.getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber);
-        const totalCount = Object.keys(result).length;
-        let response = {result, totalCount};
+        // const totalCount = Object.keys(result).length;
+        // let response = {result, totalCount};
 
-        res.status(200).json(response);
+        res.status(200).json(result);
     }
 
     getPerson = async  (req, res) => {
