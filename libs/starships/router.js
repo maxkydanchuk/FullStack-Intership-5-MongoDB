@@ -3,6 +3,9 @@ import { Router } from "express";
 function StarshipRouter(controller) {
     const router = Router();
 
+    // router.get('/api/starships', (res, req) => {
+    //     return controller.getAllStarships(res, req);
+    // });
     router.get('/api/starships', (res, req) => {
         return controller.getAllStarships(res, req);
     });

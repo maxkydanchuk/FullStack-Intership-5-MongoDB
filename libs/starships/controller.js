@@ -21,7 +21,6 @@ export default class StarshipsController {
         const pageSize = Number(req.query.size);
         const pageNumber = Number(req.query.page);
 
-        console.log(searchQuery)
         const result = await this.starshipsRepository.getAllStarships(sortBy, sortOrder, searchQuery, pageSize, pageNumber);
         res.status(200).json(result);
     }

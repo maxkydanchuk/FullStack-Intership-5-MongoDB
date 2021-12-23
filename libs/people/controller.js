@@ -14,7 +14,8 @@ export default class PeopleController {
                 eye_color: body.fields.eye_color,
                 mass: body.fields.mass,
                 birth_year: body.fields.birth_year
-            }
+            },
+            totalCount: 1
         }
     }
 
@@ -25,8 +26,12 @@ export default class PeopleController {
         const searchQuery = req.query.search;
         const pageSize = Number(req.query.size);
         const pageNumber = Number(req.query.page);
+
         const result = await this.peopleRepository.getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber);
-        res.status(200).json(result);
+        const totalCount = Object.keys(result).length;
+        let response = {result, totalCount};
+
+        res.status(200).json(response);
     }
 
     getPerson = async  (req, res) => {
