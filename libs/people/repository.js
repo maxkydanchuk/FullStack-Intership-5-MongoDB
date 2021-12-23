@@ -25,10 +25,8 @@ export default class PeopleRepository {
         if (sortBy === undefined || sortOrder === undefined) {
             return await cursor.toArray().then(res => res);
         }
-        const test = await cursor.sort(sortBy, sortOrder).toArray()
-        const result = { test , totalCount};
-
-        return result;
+        const data = await cursor.sort(sortBy, sortOrder).toArray()
+        return {data, totalCount};
     }
 
     async getPerson(id) {
