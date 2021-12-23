@@ -14,8 +14,7 @@ export default class PeopleController {
                 eye_color: body.fields.eye_color,
                 mass: body.fields.mass,
                 birth_year: body.fields.birth_year
-            },
-            totalCount: 1
+            }
         }
     }
 
