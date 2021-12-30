@@ -15,7 +15,6 @@ export default class UserController {
     }
 
     createToken(user) {
-        console.log(secretKey)
         return jwt.sign({ user: user}, secretKey, { expiresIn: "1h"});
     }
 
