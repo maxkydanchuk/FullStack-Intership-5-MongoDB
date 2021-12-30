@@ -8,7 +8,7 @@ const verifyUser = (req, res, next) => {
     if (!token) {
         return res.status(403).send({ message: "No token provided!" });
     }
-    jwt.verify(token, secretKey, (err, decoded) => {
+    jwt.verify(token, secretKey, (err) => {
         if(err) {
             return res.status(401).send({ error: 'Unauthorized'}) // !400
         }
