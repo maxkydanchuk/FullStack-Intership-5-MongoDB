@@ -11,7 +11,9 @@ import bodyParser from "body-parser";
 const __dirname = path.resolve();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    exposedHeaders: ['x-access-token']
+}));
 app.use(bodyParser.json());
 app.use(peopleRouter);
 app.use(starshipRouter);
@@ -25,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.use(function(err, req, res, next) {
     res.status(500).send('Something broke!');
+    console.error(err)
 });
 
 

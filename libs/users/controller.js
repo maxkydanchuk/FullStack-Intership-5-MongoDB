@@ -15,7 +15,7 @@ export default class UserController {
     }
 
     createToken(user) {
-        return jwt.sign({ user: user}, secretKey, { expiresIn: "1h"});
+        return jwt.sign({ userId: user._id}, secretKey, { expiresIn: "1h"});
     }
 
     getUser = async (req, res) => {
