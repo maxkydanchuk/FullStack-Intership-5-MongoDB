@@ -8,8 +8,7 @@ export default class PeopleRepository {
 
     async getAllPeople(sortBy, sortOrder, searchQuery, pageSize, pageNumber) {
 
-        let totalCount = await this.repositoryData.count().then(res => res);
-
+        let totalCount = await this.repositoryData.count();
         let options = {};
         if (searchQuery !== undefined) {
             options = {
@@ -18,11 +17,12 @@ export default class PeopleRepository {
         }
 
         let cursor = await this.repositoryData.find(options)
-            .skip( pageNumber > 0 ? ( ( pageNumber - 1 ) * pageSize ) : 0 )
+            .skip(pageNumber * pageSize)
             .limit(pageSize);
 
         if (sortBy === undefined || sortOrder === undefined) {
-            return await cursor.toArray();
+            const data = await cursor.toArray();
+            return {data, totalCount}
         }
         const data = await cursor.sort(sortBy, sortOrder).toArray()
         return {data, totalCount};

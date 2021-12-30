@@ -7,6 +7,7 @@ export default class StarshipsRepository {
     }
 
      async getAllStarships (sortBy, sortOrder, searchQuery, pageSize, pageNumber) {
+        let totalCount = await this.repositoryData.count();
         let options = {}
 
             if(searchQuery !== undefined) {
@@ -16,14 +17,16 @@ export default class StarshipsRepository {
             }
 
             let cursor = await this.repositoryData.find(options)
-                .skip(pageNumber > 0 ? ((pageNumber -1) * pageSize) : 0)
+                .skip(pageNumber * pageSize)
                 .limit(pageSize);
 
             if(sortBy === undefined || sortOrder === undefined) {
-                return await cursor.toArray().then(res => res);
+                const data = await cursor.toArray();
+                return {data, totalCount}
             }
 
-        return await cursor.sort(sortBy, sortOrder).toArray().then(res => res);
+         const data = await cursor.sort(sortBy, sortOrder).toArray()
+         return {data, totalCount};
     }
 
     async getStarship (id) {
