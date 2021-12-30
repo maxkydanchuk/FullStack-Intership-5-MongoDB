@@ -51,9 +51,10 @@ export default class PeopleController {
         res.status(200).json(getItem);
     }
 
-   deletePerson = async  (req, res) => {
+     deletePerson = async (req, res) => {
        const id = req.params.id;
-       await this.peopleRepository.deleteStarship(id);
+       console.log(req.params)
+       await this.peopleRepository.deletePerson(id);
        return res.status(200).json(id);
     }
 }
