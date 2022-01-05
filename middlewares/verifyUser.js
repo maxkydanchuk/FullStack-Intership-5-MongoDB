@@ -16,7 +16,3 @@ const verifyUser = (req, res, next) => {
     })
 }
 export default verifyUser;
-
-
-//auto relogin
-//expired token

@@ -17,7 +17,7 @@ export default class PeopleController {
             }
         }
     }
-
+    // do as method.
 
     getAllPeople = async (req, res) => {
         const sortBy = req.query.sortBy;
@@ -53,8 +53,10 @@ export default class PeopleController {
 
      deletePerson = async (req, res) => {
        const id = req.params.id;
-       console.log(req.params)
        await this.peopleRepository.deletePerson(id);
        return res.status(200).json(id);
     }
 }
+
+
+// add try catch

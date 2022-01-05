@@ -1,6 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 import { secretKey } from '../../config/config.js';
+import validate from "deep-email-validator";
+import {escapeRegExp, isValidEmail} from "../../utils/utils.js";
 
 export default class UserController {
     constructor(userRepository) {
@@ -22,34 +24,32 @@ export default class UserController {
         const {email, password} = req.body
         const user = await this.userRepository.getUser(email);
 
-        const isMatchPassword = await bcrypt.compare(password, user.password);
-        
         if (!user) {
           return res.status(404).json({error: 'user does not exist'});
         }
 
+        const isMatchPassword = await bcrypt.compare(password, user.password);
+
         if(!isMatchPassword) {
-            return res.status(400).json({message: 'Invalid password'});
+            return res.status(400).json({error: 'Invalid password'});
         }
 
-        return res.status(200).json(this.createToken(user))
+
+        const token = this.createToken(user).toString();
+        return res.status(200).json(token)
+
     }
 
     createUser = async (req, res) => {
         const body = this.getDataFromBody(req.body)
-        const { email, password } = body;
 
-        const user = await this.userRepository.getUser(email);
-
-        if(user) {
-            return await res.status(404).json({error: 'user with this email already exists'})
+        try {
+           await this.userRepository.validateUser(body);
+            const result = await this.userRepository.createUser(body);
+            return await res.status(201).json(result);
         }
-
-        const hashedPassword = await bcrypt.hash(password, 12)
-        const newUser = {email, password: hashedPassword}
-
-        const createItem = await this.userRepository.createUser(newUser)
-        const getItem = await this.userRepository.getUserById(createItem.insertedId)
-        return await res.status(201).json(getItem);
+        catch (e) {
+           return await res.status(404).json({error: e.message})
+        }
     }
 }
