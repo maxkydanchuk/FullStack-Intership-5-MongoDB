@@ -18,7 +18,6 @@ export default class PeopleController {
         }
     }
 
-
     getAllPeople = async (req, res) => {
         const sortBy = req.query.sortBy;
         const sortOrder = req.query.sortOrder;
@@ -53,7 +52,6 @@ export default class PeopleController {
 
      deletePerson = async (req, res) => {
        const id = req.params.id;
-       console.log(req.params)
        await this.peopleRepository.deletePerson(id);
        return res.status(200).json(id);
     }

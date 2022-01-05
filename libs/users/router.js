@@ -1,14 +1,15 @@
 import { Router } from "express";
 
+
 function UsersRouter(controller) {
     const router = Router();
 
-    router.get('/api/login/', (res, req) => {
-        return controller.getUser(res, req)
+    router.post('/api/login/' ,(req, res) => {
+        return controller.getUser(req, res)
     })
 
-    router.post('/api/register/', (res, req) => {
-        return controller.createUser(res, req)
+    router.post('/api/register/', (req, res) => {
+        return controller.createUser(req, res)
     })
 
     return router
