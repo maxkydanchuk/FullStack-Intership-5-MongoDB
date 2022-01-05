@@ -1,8 +1,5 @@
-import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 import { secretKey } from '../../config/config.js';
-import validate from "deep-email-validator";
-import {escapeRegExp, isValidEmail} from "../../utils/utils.js";
 
 export default class UserController {
     constructor(userRepository) {
@@ -12,7 +9,8 @@ export default class UserController {
     getDataFromBody(body) {
         return {
             email: body.email,
-            password: body.password
+            password: body.password,
+            password2: body.password2
         }
     }
 
@@ -21,35 +19,30 @@ export default class UserController {
     }
 
     getUser = async (req, res) => {
-        const {email, password} = req.body
-        const user = await this.userRepository.getUser(email);
+        const body = req.body;
 
-        if (!user) {
-          return res.status(404).json({error: 'user does not exist'});
+        try {
+            await this.userRepository.validateLoginUser(body);
+            const result = await this.userRepository.getUser(body.email);
+            const token = this.createToken(result).toString();
+            return res.status(200).json(token)
         }
 
-        const isMatchPassword = await bcrypt.compare(password, user.password);
-
-        if(!isMatchPassword) {
-            return res.status(400).json({error: 'Invalid password'});
+        catch(e) {
+            return res.status(404).json({error: e.message})
         }
-
-
-        const token = this.createToken(user).toString();
-        return res.status(200).json(token)
-
     }
 
     createUser = async (req, res) => {
         const body = this.getDataFromBody(req.body)
 
         try {
-           await this.userRepository.validateUser(body);
+           await this.userRepository.validateRegisterUser(body);
             const result = await this.userRepository.createUser(body);
-            return await res.status(201).json(result);
+            return res.status(201).json(result);
         }
         catch (e) {
-           return await res.status(404).json({error: e.message})
+           return res.status(404).json({error: e.message})
         }
     }
 }
