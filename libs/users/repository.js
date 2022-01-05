@@ -22,7 +22,6 @@ export default class UserRepository {
         if(!isValidPassword(password)) {
             throw new Error('Password should be at least 8 characters with 1 Upper Case, 1 Lower Case and at least 1 number')
         }
-
         return true
     }
 
