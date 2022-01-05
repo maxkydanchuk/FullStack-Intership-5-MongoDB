@@ -37,8 +37,7 @@ export default class UserRepository {
 
         const createItem = await this.repositoryData.insertOne(newUser);
 
-        const getItem = await this.getUserById(createItem.insertedId);
-        return getItem;
+        return await this.getUserById(createItem.insertedId);
 
     }
 }
